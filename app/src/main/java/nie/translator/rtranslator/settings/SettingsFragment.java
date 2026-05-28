@@ -107,6 +107,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getPreferenceManager().setSharedPreferencesName("default");
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.preferences);
     }
