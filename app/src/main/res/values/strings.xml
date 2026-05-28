@@ -161,4 +161,36 @@
     <string name="walkietalkie_mode" >WalkieTalkie</string>
     <string name="walkietalkie_mode_running" >WalkieTalkie mode is running...</string>
 
+
+    <string name="preference_title_online_tts_enabled">Use online TTS</string>
+    <string name="preference_description_online_tts_enabled">Use an HTTP TTS API instead of the Android system TTS engine. Restart the app after changing this.</string>
+    <string name="preference_title_online_tts_api_base_url">Online TTS API base URL</string>
+    <string name="preference_description_online_tts_api_base_url">Example: https://t.leftsite.cn</string>
+    <string name="preference_title_online_tts_api_key">Online TTS API key</string>
+    <string name="preference_description_online_tts_api_key">Optional. Sent as X-API-Key and Authorization: Bearer.</string>
+    <string name="preference_title_online_tts_voice">Online TTS voice</string>
+    <string name="preference_description_online_tts_voice">Example: zh-CN-XiaochenMultilingualNeural</string>
+    <string name="preference_title_online_tts_rate">Online TTS rate</string>
+    <string name="preference_description_online_tts_rate">Example: -20%%</string>
+    <string name="preference_title_online_tts_pitch">Online TTS pitch</string>
+    <string name="preference_description_online_tts_pitch">Example: 0%%</string>
+    <string name="preference_title_online_tts_style">Online TTS style</string>
+    <string name="preference_description_online_tts_style">Optional voice style parameter.</string>
+    <string name="preference_title_online_tts_output_format">Online TTS output format</string>
+    <string name="preference_description_online_tts_output_format">Example: audio-24khz-48kbitrate-mono-mp3</string>
+    <string name="preference_title_llm_translation_enabled">Use online LLM translation</string>
+    <string name="preference_description_llm_translation_enabled">Use an OpenAI-compatible chat completions API instead of the offline NLLB translator.</string>
+    <string name="preference_title_llm_api_base_url">LLM API base URL</string>
+    <string name="preference_description_llm_api_base_url">Example: https://api.openai.com/v1 or any compatible endpoint base URL.</string>
+    <string name="preference_title_llm_api_key">LLM API key</string>
+    <string name="preference_description_llm_api_key">Sent as Authorization: Bearer.</string>
+    <string name="preference_title_llm_model">LLM model</string>
+    <string name="preference_description_llm_model">Example: gpt-4o-mini, mistral-medium-3.5， deepseek-v4-flash, or another OpenAI-compatible model.</string>
+    <string name="preference_title_llm_temperature">LLM temperature</string>
+    <string name="preference_description_llm_temperature">Default: 0.3</string>
+    <string name="preference_title_llm_disable_thinking">Disable thinking output</string>
+    <string name="preference_description_llm_disable_thinking">Adds instructions to return only the translation and strips &lt;think&gt; tags from model output.</string>
+    <string name="preference_title_llm_prompt">LLM translation prompt</string>
+    <string name="preference_description_llm_prompt">Default: 自然直译版：在保留原文结构和含义的基础上，让译文符合目标语言的表达习惯，读起来流畅自然，不生硬。只输出译文，不要解释。</string>
+
 </resources>
