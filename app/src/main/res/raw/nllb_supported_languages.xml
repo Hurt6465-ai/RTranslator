@@ -144,4 +144,8 @@
         <code>vi</code>
         <code_NLLB>vie_Latn</code_NLLB>
     </language>
+    <language>
+        <code>my</code>
+        <code_NLLB>mya_Mymr</code_NLLB>
+    </language>
 </languages>
