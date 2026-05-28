@@ -449,6 +449,10 @@ public class Translator extends NeuralNetworkApi {
         if(saveResults) {
             lastInputText = new GuiMessage(new Message(global, textToTranslate), false, true);
         }
+        if (OnlineLlmTranslator.isEnabled(global)) {
+            performOnlineTextTranslation(textToTranslate, inputLanguage, outputLanguage, saveResults, responseListener, initTime);
+            return;
+        }
 
         //we split the input text in sentences
         ArrayList<String> textSplit = new ArrayList<>();
@@ -582,6 +586,31 @@ public class Translator extends NeuralNetworkApi {
             mainHandler.post(() -> notifyResult(textToTranslate, finalResult, currentResultIDCopy, true, outputLanguage));
         }
         currentResultID++;
+    }
+
+
+    private void performOnlineTextTranslation(final String textToTranslate, final CustomLocale inputLanguage, final CustomLocale outputLanguage, boolean saveResults, @Nullable final TranslateListener responseListener, long initTime) {
+        try {
+            final String finalResult = OnlineLlmTranslator.translate(global, textToTranslate, inputLanguage, outputLanguage);
+            android.util.Log.i("performance", "ONLINE LLM TRANSLATION DONE IN: " + (System.currentTimeMillis() - initTime) + "ms");
+            if (saveResults) {
+                lastOutputText = new GuiMessage(new Message(global, finalResult), currentResultID, false, true);
+            }
+            final long currentResultIDCopy = currentResultID;
+            if (responseListener != null) {
+                mainHandler.post(() -> responseListener.onTranslatedText(textToTranslate, finalResult, currentResultIDCopy, true, outputLanguage));
+            } else {
+                mainHandler.post(() -> notifyResult(textToTranslate, finalResult, currentResultIDCopy, true, outputLanguage));
+            }
+            currentResultID++;
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (responseListener != null) {
+                mainHandler.post(() -> responseListener.onFailure(new int[]{ErrorCodes.ERROR_EXECUTING_MODEL}, 0));
+            } else {
+                mainHandler.post(() -> notifyError(new int[]{ErrorCodes.ERROR_EXECUTING_MODEL}, 0));
+            }
+        }
     }
 
     @Nullable
