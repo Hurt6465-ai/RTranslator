@@ -74,11 +74,98 @@
             android:title="@string/preference_title_tts"
             android:summary="@string/preference_description_tts"
             app:iconSpaceReserved="false" />
+        <androidx.preference.SwitchPreference
+            android:defaultValue="false"
+            android:key="onlineTtsEnabled"
+            android:title="@string/preference_title_online_tts_enabled"
+            android:summary="@string/preference_description_online_tts_enabled"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue="https://t.leftsite.cn"
+            android:key="onlineTtsApiBaseUrl"
+            android:title="@string/preference_title_online_tts_api_base_url"
+            android:summary="@string/preference_description_online_tts_api_base_url"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:key="onlineTtsApiKey"
+            android:title="@string/preference_title_online_tts_api_key"
+            android:summary="@string/preference_description_online_tts_api_key"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue="zh-CN-XiaochenMultilingualNeural"
+            android:key="onlineTtsVoice"
+            android:title="@string/preference_title_online_tts_voice"
+            android:summary="@string/preference_description_online_tts_voice"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue="-20%"
+            android:key="onlineTtsRate"
+            android:title="@string/preference_title_online_tts_rate"
+            android:summary="@string/preference_description_online_tts_rate"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue="0%"
+            android:key="onlineTtsPitch"
+            android:title="@string/preference_title_online_tts_pitch"
+            android:summary="@string/preference_description_online_tts_pitch"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:key="onlineTtsStyle"
+            android:title="@string/preference_title_online_tts_style"
+            android:summary="@string/preference_description_online_tts_style"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue="audio-24khz-48kbitrate-mono-mp3"
+            android:key="onlineTtsOutputFormat"
+            android:title="@string/preference_title_online_tts_output_format"
+            android:summary="@string/preference_description_online_tts_output_format"
+            app:iconSpaceReserved="false" />
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
         android:title="@string/preference_header_advanced"
         app:iconSpaceReserved="false"
         app:allowDividerAbove="true">
+        <androidx.preference.SwitchPreference
+            android:defaultValue="false"
+            android:key="llmTranslationEnabled"
+            android:title="@string/preference_title_llm_translation_enabled"
+            android:summary="@string/preference_description_llm_translation_enabled"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue="https://api.openai.com/v1"
+            android:key="llmTranslationApiBaseUrl"
+            android:title="@string/preference_title_llm_api_base_url"
+            android:summary="@string/preference_description_llm_api_base_url"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:key="llmTranslationApiKey"
+            android:title="@string/preference_title_llm_api_key"
+            android:summary="@string/preference_description_llm_api_key"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue="gpt-4o-mini"
+            android:key="llmTranslationModel"
+            android:title="@string/preference_title_llm_model"
+            android:summary="@string/preference_description_llm_model"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue="0.3"
+            android:key="llmTranslationTemperature"
+            android:title="@string/preference_title_llm_temperature"
+            android:summary="@string/preference_description_llm_temperature"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.SwitchPreference
+            android:defaultValue="true"
+            android:key="llmTranslationDisableThinking"
+            android:title="@string/preference_title_llm_disable_thinking"
+            android:summary="@string/preference_description_llm_disable_thinking"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue="自然直译风格：在保留原文结构和含义的基础上，让译文符合目标语言的表达习惯，读起来流畅自然，不生硬。只输出译文，不要解释。"
+            android:key="llmTranslationPrompt"
+            android:title="@string/preference_title_llm_prompt"
+            android:summary="@string/preference_description_llm_prompt"
+            app:iconSpaceReserved="false" />
         <nie.translator.rtranslator.settings.ShowOriginalTranscriptionMsgPreference
             android:defaultValue="false"
             android:key="ShowOriginalTranscriptionMsgPreference"
