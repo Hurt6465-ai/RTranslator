@@ -37,6 +37,10 @@
         <code_NLLB>asm_Beng</code_NLLB>
     </language>
     <language>
+       <code>km</code>
+       <code_NLLB>khm_Khmr</code_NLLB>
+    </language>
+    <language>
         <code>eu</code>
         <code_NLLB>eus_Latn</code_NLLB>
     </language>
