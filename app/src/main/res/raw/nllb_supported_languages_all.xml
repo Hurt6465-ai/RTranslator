@@ -312,4 +312,8 @@
         <code>id</code>
         <code_NLLB>ind_Latn</code_NLLB>
     </language>-->
+    <language>
+        <code>my</code>
+        <code_NLLB>mya_Mymr</code_NLLB>
+    </language>
 </languages>
